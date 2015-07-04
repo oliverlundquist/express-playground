@@ -1,0 +1,17 @@
+{
+  "name": "kurashicom-express-apps-order",
+  "description": "Order API for our in-house platform",
+  "version": "0.0.0",
+  "repository": "https://github.com/kurashicom-express-apps/order",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "4.13.0",
+    "rethinkdb": "2.0.2",
+    "lodash": "3.10.0",
+    "dotenv": "1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.3.7"
+  }
+}

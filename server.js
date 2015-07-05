@@ -1,9 +1,9 @@
-var express       = require('express');
-var app           = express();
-var bootstrap     = require('./app/bootstrap');
-var routes        = require('./app/routes');
-var middleware    = require('./app/middleware');
-var errorhandlers = require('./app/errors');
+var express    = require('express');
+var app        = express();
+var bootstrap  = require('./app/bootstrap');
+var routes     = require('./app/routes');
+var middleware = require('./app/middleware');
+var errors     = require('./app/errors');
 
 // bootstrap
 bootstrap(app);
@@ -17,8 +17,8 @@ routes(app);
 // post-route middleware
 middleware.after(app);
 
-// error handlers
-errorhandlers.register(app);
+// register errorhandlers
+errors(app);
 
 // start server
 var server = app.listen(3000, function () {

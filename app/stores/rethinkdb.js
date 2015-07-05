@@ -1,4 +1,5 @@
 var r = require('rethinkdb');
+var Promise = require('bluebird');
 var conn = null;
 
 module.exports = function (app) {
@@ -13,7 +14,11 @@ module.exports = function (app) {
     }
 
     store.all = function () {
-        return r.table('orders').run(conn);
+        return new Promise(function (resolve, reject) {
+            r.table('orders').run(conn)
+                .then(function (cursor) { resolve(cursor.toArray()); })
+                .error(reject);
+        });
     }
 
     store.disconnect = function () {

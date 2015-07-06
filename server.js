@@ -26,3 +26,6 @@ var server = app.listen(3000, function () {
     var port = server.address().port;
     console.log('Example app listening at http://%s:%s', host, port);
 });
+
+// expose app so that we can use it in tests
+module.exports = app;

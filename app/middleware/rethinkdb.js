@@ -10,8 +10,8 @@ module.exports.connect = function (app) {
 module.exports.disconnect = function (app) {
     return function (req, res, next) {
         // req.on('finish', function() {
-            console.log('after middleware');
-            app.get('rethinkdb').disconnect().then(function (result) {
+        console.log('after middleware');
+        app.get('rethinkdb').disconnect().then(function (result) {
                     console.log('disconnected');
                     next();
                 }).error(next);

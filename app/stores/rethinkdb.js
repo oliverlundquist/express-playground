@@ -6,7 +6,7 @@ module.exports = function (app) {
     var store = {};
 
     store.connect = function () {
-        return r.connect({ host: process.env.RETHINKDB_HOST, timeout: 5 });
+        return r.connect({host: process.env.RETHINKDB_HOST, timeout: 5});
     }
 
     store.setConnection = function (connection) {

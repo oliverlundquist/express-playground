@@ -21,11 +21,10 @@ middleware.after(app);
 errors(app);
 
 // start server
-var server = app.listen(3000, function () {
-    var host = server.address().address;
-    var port = server.address().port;
-    console.log('Example app listening at http://%s:%s', host, port);
-});
+// if(require.main === module) {
+//     app.listen(3000);
+// }
+app.listen(3000);
 
 // expose app so that we can use it in tests
 module.exports = app;

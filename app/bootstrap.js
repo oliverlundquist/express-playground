@@ -1,3 +1,6 @@
+// load newrelic agent
+require('newrelic');
+
 // load .env file
 require('dotenv').load();
 
